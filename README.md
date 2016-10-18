@@ -6,8 +6,8 @@ This is a sample app for the Open918 library, which parses the contents of UIC 9
 ## How to use
 An APK file can be found under releases and used to install this on an Android device.
 
-<img src="http://i.imgur.com/S1Nshe6.png" alt="Initial screen" width="480">
-<img src="http://i.imgur.com/FNRl6Vs.png" alt="Ticket Details" width="480">
+<img src="http://i.imgur.com/S1Nshe6.png" alt="Ticket Details" width="320">
+<img src="http://i.imgur.com/FNRl6Vs.png" alt="Initial screen" width="320">
 
 ## Features
 The Open918 library is beta quality - it's nowhere feature complete but has fairly mature parsing capabilities. This sample app needs some tender loving care in the styling and UX departments, it may be added in the future.
