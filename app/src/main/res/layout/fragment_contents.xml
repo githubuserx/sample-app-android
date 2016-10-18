@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+    <HorizontalScrollView
+        android:id="@+id/scroll_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
+        android:layout_gravity="center"
+        android:scrollbarAlwaysDrawHorizontalTrack="true">
+        <TextView android:id="@+id/label_ticket_contents"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:textSize="12dp"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </HorizontalScrollView>
+    <FrameLayout
+        android:layout_below="@id/scroll_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:textSize="12dp"
+            android:drawableStart="@drawable/ic_swap_horiz"
+            android:drawableLeft="@drawable/ic_swap_horiz"
+            android:drawablePadding="8dp"
+            android:text="@string/label_swipe"
+            android:layout_gravity="center_horizontal" />
+    </FrameLayout>
+
+    <Button
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_share"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_share"
+        android:drawableLeft="@drawable/ic_share"
+        android:drawablePadding="8dp"
+        android:layout_above="@+id/button_table"
+        android:text="@string/label_share" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button"
+        android:id="@id/button_table"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_table"
+        android:drawableLeft="@drawable/ic_table"
+        android:text="@string/label_view_table" />
+
+
+
+</RelativeLayout>

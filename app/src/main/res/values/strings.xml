@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Open918 Sample</string>
+    <string name="title_activity_ticket_detail">Ticket Detail</string>
+
+    <string name="label_ticket_unknown">Unknown</string>
+    <string name="header_ticket_detail">Ticket details</string>
+    <string name="label_ticket_contents">Contents</string>
+    <string name="label_barcode_details">Barcode</string>
+    <string name="label_carrier">Carrier</string>
+    <string name="label_creation">Created at</string>
+    <string name="label_key_code">Key Identifier</string>
+    <string name="label_share">Share</string>
+    <string name="label_explanation_unknown">Unknown ticket</string>
+    <string name="label_order_number">Order number</string>
+    <string name="label_ticket_details">Ticket</string>
+    <string name="label_languages">Languages</string>
+    <string name="label_empty"><![CDATA[<empty>]]></string>
+    <string name="label_ticket_flags">Ticket flags</string>
+    <string name="flag_international">International</string>
+    <string name="flag_edited">Edited</string>
+    <string name="flag_specimen">Specimen</string>
+    <string name="label_signature_valid">Signature check</string>
+    <string name="label_not_implemented">Unknown (not yet implemented)</string>
+    <string name="label_pause">Paused</string>
+    <string name="action_tickets">Remove tickets</string>
+    <string name="label_no_tickets">No ticket scanned</string>
+    <string name="label_no_tickets_explanation">Hold an Aztec barcode in front of the camera and position it in the highlighted box</string>
+    <string name="title_whats_new">What\'s new</string>
+    <string name="label_ok">Ok</string>
+    <string name="action_about">About</string>
+    <string name="email_content"><![CDATA[<leg uit wat voor ticket dit is en geef evt extra details>\r\n======================(MyFirstRailpocket 1.0.0)\r\n\r\n]]></string>
+    <string name="email_barcode" translatable="false">barcode@bliksemlabs.com</string>
+    <string name="email_subject">Aztec barcode from Open918 Android Sample App</string>
+    <string name="label_send_email">Send email</string>
+    <string name="label_email">Send Email</string>
+    <string name="email_normal_subject">Open918 Barcode</string>
+    <string name="title_scan_nfc">Oops…</string>
+    <string name="label_travel_details">Travel</string>
+    <string name="label_ticket_name">Ticket title</string>
+    <string name="label_passenger_name">Traveller</string>
+    <string name="label_outward_trip">Outward trip</string>
+    <string name="label_return_trip">Return trip</string>
+    <string name="label_field_unknown">Not applicable</string>
+    <string name="label_price">Price</string>
+    <string name="label_travel_class">Class</string>
+    <string name="tab_properties">Properties</string>
+    <string name="tab_barcode">Barcode</string>
+    <string name="tab_contents">Contents</string>
+    <string name="label_swipe">Swipe left and right to see full contents</string>
+    <string name="title_camera">Camera permission</string>
+    <string name="text_camera">This app uses the camera to take snapshots and detect barcodes. The next screen will ask you to give permission to allow this app to use the camera.</string>
+    <string name="label_barcode_uic">UIC 918.2 Aztec barcode</string>
+    <string name="title_activity_fields_table">Fields</string>
+    <string name="label_line">Line</string>
+    <string name="label_column">Column</string>
+    <string name="label_width">Width</string>
+    <string name="label_blank"><![CDATA[<blank>]]></string>
+    <string name="label_view_table">Table</string>
+    <string name="label_tickets_found">Ticket found</string>
+
+</resources>

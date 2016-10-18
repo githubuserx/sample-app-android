@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/barcode"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:layout_margin="0dp">
+
+        <com.journeyapps.barcodescanner.BarcodeView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/zxing_barcode_surface"/>
+
+        <com.journeyapps.barcodescanner.ViewfinderView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/zxing_viewfinder_view"/>
+        <Button
+            android:id="@+id/button_viewfinder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="40dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@color/transparent"
+        />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/view_initial"
+        android:paddingTop="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/barcode"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_credit_card"
+            android:tint="@color/colorPrimaryDark"/>
+        <TextView
+            android:paddingTop="8dp"
+            android:text="@string/label_no_tickets"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@string/label_no_tickets_explanation"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_found"
+        android:paddingTop="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/barcode"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <TextView
+            android:paddingTop="8dp"
+            android:text="@string/label_tickets_found"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>
