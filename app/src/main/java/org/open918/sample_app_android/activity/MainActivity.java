@@ -10,15 +10,13 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
-import com.alertdialogpro.AlertDialogPro;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.ResultPoint;
 import com.journeyapps.barcodescanner.BarcodeCallback;
@@ -38,7 +36,7 @@ import java.util.List;
 import static android.view.View.GONE;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final int REQUEST_CAMERA_PERMISSION = 100;
@@ -64,9 +62,9 @@ public class MainActivity extends ActionBarActivity {
 
         initialView = findViewById(R.id.view_initial);
         foundView = findViewById(R.id.view_found);
-        viewFinder = (ViewfinderView) findViewById(R.id.zxing_viewfinder_view);
-        viewfinderButton = (Button) findViewById(R.id.button_viewfinder);
-        barcodeView = (BarcodeView) findViewById(R.id.zxing_barcode_surface);
+        viewFinder = findViewById(R.id.zxing_viewfinder_view);
+        viewfinderButton = findViewById(R.id.button_viewfinder);
+        barcodeView = findViewById(R.id.zxing_barcode_surface);
 
         if (!hasCameraPermission()) {
             requestCameraPermission();
@@ -74,7 +72,8 @@ public class MainActivity extends ActionBarActivity {
 
         // This starts decoding
         if (hasCameraPermission()) {
-            barcodeView.setDecoderFactory(new DefaultDecoderFactory(Collections.singletonList(BarcodeFormat.AZTEC), null, null));
+            barcodeView.setDecoderFactory(
+                    new DefaultDecoderFactory(Collections.singletonList(BarcodeFormat.AZTEC)));
             barcodeView.decodeSingle(callback);
         }
 
@@ -93,7 +92,7 @@ public class MainActivity extends ActionBarActivity {
             Log.e(TAG, "User needs explanation");
             showPaused();
 
-            AlertDialogPro.Builder builder = new AlertDialogPro.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.title_camera)
                     .setMessage(getString(R.string.text_camera))
                     .setPositiveButton(R.string.label_ok, new DialogInterface.OnClickListener() {

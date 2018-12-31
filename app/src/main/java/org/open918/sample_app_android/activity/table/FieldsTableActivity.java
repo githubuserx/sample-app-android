@@ -21,15 +21,15 @@ public class FieldsTableActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fields_table);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         result = TicketUtil.getTicket(savedInstanceState, getIntent());
 
         if (result != null && result.isReadable()) {
-            mRecyclerView = (RecyclerView) findViewById(R.id.list_fields);
+            mRecyclerView = findViewById(R.id.list_fields);
             mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-            mAdapter = new TicketFieldsAdapter(this, result.getTicket().getContents().getFields());
+            mAdapter = new TicketFieldsAdapter(this, result.getTicket().getContent().getFields());
             mRecyclerView.setAdapter(mAdapter);
         }
 

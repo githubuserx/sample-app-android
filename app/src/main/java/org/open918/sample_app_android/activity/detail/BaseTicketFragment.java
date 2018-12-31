@@ -24,8 +24,8 @@ public class BaseTicketFragment extends Fragment {
     }
 
     private TicketConverter getTicketConverter() {
-        return ConverterFactory.getInstance(result.getTicket().getContents().getStandard(),
-                result.getTicket().getContents().getFields());
+        return ConverterFactory.getInstance(result.getTicket().getContent().getLayout(),
+                result.getTicket().getContent().getFields());
     }
 
     protected String getResultAsBase64() {
