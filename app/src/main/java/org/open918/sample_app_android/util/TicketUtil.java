@@ -6,7 +6,6 @@ import android.util.Log;
 
 import org.open918.lib.UicTicketParser;
 import org.open918.lib.domain.Ticket;
-import org.open918.sample_app_android.activity.detail.TicketDetailActivity;
 import org.open918.sample_app_android.domain.ScanResult;
 
 import java.text.ParseException;

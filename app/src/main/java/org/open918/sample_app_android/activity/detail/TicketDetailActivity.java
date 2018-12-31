@@ -1,7 +1,6 @@
 package org.open918.sample_app_android.activity.detail;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,20 +9,13 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import org.open918.lib.UicTicketParser;
-import org.open918.lib.domain.Ticket;
 import org.open918.sample_app_android.R;
-import org.open918.sample_app_android.activity.MainActivity;
 import org.open918.sample_app_android.domain.ScanResult;
 
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.zip.DataFormatException;
 
 import static org.open918.sample_app_android.util.TicketUtil.getTicket;
 
@@ -42,8 +34,8 @@ public class TicketDetailActivity extends AppCompatActivity {
 
         result = getTicket(savedInstanceState, getIntent());
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        TabLayout tabLayout = findViewById(R.id.sliding_tabs);
 
         if (result != null && result.isReadable()) {
             viewPager.setAdapter(new DetailsFragmentPagerAdapter(getSupportFragmentManager(),
@@ -53,10 +45,10 @@ public class TicketDetailActivity extends AppCompatActivity {
             viewPager.setVisibility(View.GONE);
             tabLayout.setVisibility(View.GONE);
 
-            CardView card = (CardView) findViewById(R.id.card_unknown);
+            CardView card = findViewById(R.id.card_unknown);
             card.setVisibility(View.VISIBLE);
 
-            Button shareButton = (Button) findViewById(R.id.button_share);
+            Button shareButton = findViewById(R.id.button_share);
             ShareClickListener share = new ShareClickListener(this, BaseTicketFragment.getResultAsBase64(result));
             shareButton.setOnClickListener(share);
         }

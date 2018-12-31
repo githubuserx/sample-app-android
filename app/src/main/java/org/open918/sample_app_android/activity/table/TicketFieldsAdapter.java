@@ -1,6 +1,7 @@
 package org.open918.sample_app_android.activity.table;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +27,7 @@ public class TicketFieldsAdapter extends RecyclerView.Adapter<TicketFieldsAdapte
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View item = inflater.inflate(R.layout.row_ticket_field, parent, false);
 
@@ -34,7 +35,7 @@ public class TicketFieldsAdapter extends RecyclerView.Adapter<TicketFieldsAdapte
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         TicketField field = fields.get(position);
         holder.textLine.setText(String.valueOf(field.getLine()));
         holder.textColumn.setText(String.valueOf(field.getColumn()));
@@ -63,10 +64,10 @@ public class TicketFieldsAdapter extends RecyclerView.Adapter<TicketFieldsAdapte
 
         public ViewHolder(View itemView) {
             super(itemView);
-            textLine = (TextView) itemView.findViewById(R.id.text_line);
-            textColumn = (TextView) itemView.findViewById(R.id.text_column);
-            textWidth = (TextView) itemView.findViewById(R.id.text_width);
-            textContents = (TextView) itemView.findViewById(R.id.text_contents);
+            textLine = itemView.findViewById(R.id.text_line);
+            textColumn = itemView.findViewById(R.id.text_column);
+            textWidth = itemView.findViewById(R.id.text_width);
+            textContents = itemView.findViewById(R.id.text_contents);
             item = itemView;
         }
     }

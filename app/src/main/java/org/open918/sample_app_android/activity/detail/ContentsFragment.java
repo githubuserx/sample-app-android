@@ -1,7 +1,6 @@
 package org.open918.sample_app_android.activity.detail;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 
 import org.open918.sample_app_android.R;
 import org.open918.sample_app_android.activity.table.FieldsTableActivity;
-import org.open918.sample_app_android.util.BarcodeWriter;
 
 /**
  * Created by Joel Haasnoot on 18/10/15.
@@ -32,14 +30,14 @@ public class ContentsFragment extends BaseTicketFragment {
 
         View fragment = inflater.inflate(R.layout.fragment_contents, container, false);
 
-        TextView ticketContents = (TextView) fragment.findViewById(R.id.label_ticket_contents);
+        TextView ticketContents = fragment.findViewById(R.id.label_ticket_contents);
         ticketContents.setText(converter.toText());
         ticketContents.setTypeface(Typeface.MONOSPACE);
 
-        Button shareButton = (Button) fragment.findViewById(R.id.button_share);
+        Button shareButton = fragment.findViewById(R.id.button_share);
         shareButton.setOnClickListener(new ShareClickListener(getContext(), getResultAsBase64()));
 
-        Button buttonTable = (Button) fragment.findViewById(R.id.button_table);
+        Button buttonTable = fragment.findViewById(R.id.button_table);
         buttonTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

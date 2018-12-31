@@ -1,6 +1,7 @@
 package org.open918.sample_app_android.activity.detail;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -27,7 +28,7 @@ public class PropertiesFragment extends BaseTicketFragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getTicket();
 
         View v = inflater.inflate(R.layout.fragment_details, container, false);
@@ -43,15 +44,15 @@ public class PropertiesFragment extends BaseTicketFragment {
     private void setupTicketDetailFields(View v) {
         // Ticket details
         // TODO - needs better name
-        TextView ticketCreated = (TextView) v.findViewById(R.id.text_barcode_creation);
+        TextView ticketCreated = v.findViewById(R.id.text_barcode_creation);
         Date created = result.getTicket().getHeader().getCreationDateAsDate();
         ticketCreated.setText(SimpleDateFormat.getDateTimeInstance().format(created));
 
-        TextView ticketOrder = (TextView) v.findViewById(R.id.text_order_number);
+        TextView ticketOrder = v.findViewById(R.id.text_order_number);
         String order = result.getTicket().getHeader().getOrderNumber().trim();
         ticketOrder.setText((order.replace(" ", "").isEmpty()) ? getString(R.string.label_empty) : order);
 
-        TextView ticketLanguages = (TextView) v.findViewById(R.id.text_languages);
+        TextView ticketLanguages = v.findViewById(R.id.text_languages);
         ticketLanguages.setText(String.format("%s, %s", result.getTicket().getHeader().getLanguage(),
                 result.getTicket().getHeader().getLanguage2()));
 
@@ -68,10 +69,10 @@ public class PropertiesFragment extends BaseTicketFragment {
 
     private void setupBarcodeFields(View v) {
         // Barcode details
-        TextView barcodeCarrier = (TextView) v.findViewById(R.id.barcode_carrier);
+        TextView barcodeCarrier = v.findViewById(R.id.barcode_carrier);
         barcodeCarrier.setText(Carrier.fromRics(result.getTicket().getRicsCode()).getLabel());
 
-        TextView barcodeSignatureId = (TextView) v.findViewById(R.id.barcode_signature_id);
+        TextView barcodeSignatureId = v.findViewById(R.id.barcode_signature_id);
         barcodeSignatureId.setText(result.getTicket().getSignatureKeyId());
     }
 
@@ -80,42 +81,42 @@ public class PropertiesFragment extends BaseTicketFragment {
 
         // Travel details
         GenericTicketDetails details = converter.toDetails();
-        TextView travelTitle = (TextView) v.findViewById(R.id.travel_ticket_name);
+        TextView travelTitle = v.findViewById(R.id.travel_ticket_name);
         if (!details.getTicketTitle().equalsIgnoreCase("")) {
             travelTitle.setText(details.getTicketTitle());
         } else {
             setFieldUnknown(grey, travelTitle);
         }
 
-        TextView travelPassenger = (TextView) v.findViewById(R.id.travel_passenger_name);
+        TextView travelPassenger = v.findViewById(R.id.travel_passenger_name);
         if (!details.getPassengerName().equalsIgnoreCase("")) {
             travelPassenger.setText(details.getPassengerName());
         } else {
             setFieldUnknown(grey, travelPassenger);
         }
 
-        TextView travelOutward = (TextView) v.findViewById(R.id.travel_outward);
+        TextView travelOutward = v.findViewById(R.id.travel_outward);
         if (isNotEmpty(details.getOutwardDeparture())) {
             travelOutward.setText(String.format("%s - %s", details.getOutwardDeparture(), details.getOutwardArrival()));
         } else {
             setFieldUnknown(grey, travelOutward);
         }
 
-        TextView travelReturn = (TextView) v.findViewById(R.id.travel_return);
+        TextView travelReturn = v.findViewById(R.id.travel_return);
         if (isNotEmpty(details.getReturnDeparture())) {
             travelReturn.setText(String.format("%s - %s", details.getReturnDeparture(), details.getReturnArrival()));
         } else {
             setFieldUnknown(grey, travelReturn);
         }
 
-        TextView travelPrice = (TextView) v.findViewById(R.id.travel_price);
+        TextView travelPrice = v.findViewById(R.id.travel_price);
         if (isNotEmpty(details.getPrice())) {
             travelPrice.setText(details.getPrice());
         } else {
             setFieldUnknown(grey, travelPrice);
         }
 
-        TextView travelClass = (TextView) v.findViewById(R.id.travel_class);
+        TextView travelClass = v.findViewById(R.id.travel_class);
         if (isNotEmpty(details.getTravelClass())) {
             travelClass.setText(details.getTravelClass());
         } else {

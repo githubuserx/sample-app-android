@@ -2,6 +2,7 @@ package org.open918.sample_app_android.activity.detail;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,12 +24,12 @@ public class BarcodeFragment extends BaseTicketFragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getTicket();
 
         View fragment = inflater.inflate(R.layout.fragment_barcode, container, false);
 
-        ImageView barcode = (ImageView) fragment.findViewById(R.id.image_barcode);
+        ImageView barcode = fragment.findViewById(R.id.image_barcode);
         barcode.setImageBitmap(createBarcode(result.getContents()));
 
         return fragment;
